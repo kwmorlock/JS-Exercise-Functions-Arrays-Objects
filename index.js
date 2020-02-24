@@ -81,8 +81,19 @@ return `Hello, my name is ${namekm.name}`;
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(/* code here */kmname) {
   /* code here */
+  const canthisbeanything = {
+  name: kmname,
+  sum(kmnum1, kmnum2){
+return kmnum1 + kmnum2;
+  },
+  speak() {
+    return `Hello, my name is ${canthisbeanything.name}`;
+
+  }
+  }
+  return canthisbeanything;
 }
 
 
