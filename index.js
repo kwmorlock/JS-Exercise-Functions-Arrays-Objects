@@ -282,8 +282,9 @@ function getGermanCars(/* code here */inventory) {
   return germanycar}
 
 
-
-
+//  The || means or
+// The .push adds items to end of array
+// could had been done with inventory[i].car_make instead of vroom.car_make
 
 
 
@@ -294,7 +295,7 @@ function getGermanCars(/* code here */inventory) {
  * @instructions
  * Create arrow function versions of the following commented-out functions:
  * 
-* const sum = function (a, b) => {
+* const sum = function (a, b {
  *   return a + b; }
  * 
 
@@ -316,15 +317,19 @@ function getGermanCars(/* code here */inventory) {
 // const addFive = null; // code here!
 // const argTimesTwo = null; // code here!
 
-const sum = (a, b) => {
-  return a + b;
-};
-const addFive = (num) => {
-  return num + 5;
-};
-const argTimesTwo = (num) => {
-  return num * 2;
-};
+// const sum = (a, b) => {
+//   return a + b;
+// };
+// const addFive = (num) => {
+//   return num + 5;
+// };
+// const argTimesTwo = (num) => {
+//   return num * 2;
+// };
+
+const sum = (a, b) => a+ b;
+const addFive = (num) => num + 5;
+const argTimesTwo = (num) => num * 2;
 
 
 
