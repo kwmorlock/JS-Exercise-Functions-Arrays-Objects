@@ -225,8 +225,12 @@ function sortCarInventory(inventory) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(/* code here */inventory) {
+  let reallycar= [];
+   for (let i = 0; i < inventory.length; i++){
+    reallycar.push(inventory[i].car_year);
+   }
+   return reallycar;
 }
 
 /**
@@ -241,8 +245,15 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(/* code here */inventory, year) {
   /* code here */
+  let newarray = [];
+  for (let i = 0; i < inventory.length; i++){
+    if (inventory[i].car_year <= year){
+   newarray.push(inventory[i]);
+    }
+  }
+  return newarray
 }
 
 /**
@@ -256,9 +267,19 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
+function getGermanCars(/* code here */inventory) {
   /* code here */
-}
+  let germanycar = [];
+  for (let i = 0; i < inventory.length; i++) {
+  let vroom = inventory[i];
+  if (
+    vroom.car_make === "Audi" ||
+    vroom.car_make === "Mercedes-Benz" ||
+    vroom.car_make === "Volkswagen" ||
+    vroom.car_make === "BMW") 
+    {germanycar.push(vroom)}
+  }
+  return germanycar}
 
 /**
  * ### Challenge refactor to arrow functions
