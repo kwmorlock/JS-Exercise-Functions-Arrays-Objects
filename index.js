@@ -189,8 +189,10 @@ function getLastCarInfo(/* code here */hmm) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(/* code here */wowinventory, okid) { // order matters!!!
   /* code here */
+  const reallycar= wowinventory[okid-1]
+  return `This is a ${reallycar.car_make} ${reallycar.car_model}`
 }
 
 /**
@@ -201,8 +203,17 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(inventory) {
+  return inventory.sort((a, z)=>{
+    if(a.car_model < z.car_model){
+      return -1;
+    }
+    if(a.car_model > z.car_model){
+      return 1;
+  }
+  return 0;
+}
+  )
 }
 
 /**
